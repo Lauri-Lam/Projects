@@ -1,0 +1,63 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+#question,
+#container {
+  margin: auto;
+}
+
+#question {
+  border: 1px solid black;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  text-align: center;
+  width: fit-content;
+}
+
+#inputs input,
+#inputs button{
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+
+#inputs button {
+  background-color: transparent;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+#inputs button:hover {
+  background-color: gray;
+}
+
+#inputs button:active {
+  opacity: 80%;
+}
+
+#container {
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 20rem;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: whitesmoke;
+  font-weight: 800;
+  font-size: 2rem;
+  box-shadow: 5px 5px 30px black;
+}
+
+#output {
+  white-space: nowrap; /* Prevent text wrapping */
+  display: inline-block; /* Allow shrinking */
+  text-align: center; /* Center text */
+  max-width: 90%; /* Limit width to 90% of the container */
+  font-size: 2vw; /* Responsive font size based on viewport width */
+  overflow: hidden; /* Hide overflow text */
+}
