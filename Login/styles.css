@@ -1,0 +1,92 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(img.jpg);
+    min-height: 100vh;
+}
+.wrapper {
+    background-color: transparent;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-color: rgb(77, 77, 77);
+    border: 1px solid;
+    border-radius: 4px;
+    width: 420px;
+    color: #ffffff;
+    padding: 20px 20px;
+    box-shadow: 0 0 10px 1px black;
+}
+.wrapper h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 20px 45px 20px 20px;
+    font-size: 16px;
+}
+.input-box input::placeholder {
+    color: #ffffff;
+}
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    padding-bottom: 20px;
+}
+.wrapper .remember-forgot:hover {
+    cursor: pointer;
+}
+.wrapper button {
+    width: 100%;
+    height: 50px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+.wrapper button:hover {
+    cursor: pointer;
+}
+.wrapper .remember-forgot input[type="checkbox"]:hover,
+.wrapper .remember-forgot label:hover {
+    cursor: pointer;
+}
+.wrapper a {
+    text-decoration: none;
+    color: white;
+}
+.wrapper .register-link {
+    text-align: center;
+    padding-top: 20px;
+}
+.wrapper .register-link a {
+    font-weight: 650;
+}

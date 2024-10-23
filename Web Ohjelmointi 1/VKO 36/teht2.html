@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tehtävä 2</title>
+  <link href="teht2.css" rel="stylesheet">
+  <style>
+    p:not(#esipuhe) {
+      text-transform: uppercase;
+      font-family: Arial, sans-serif;
+    }
+    .highlight {
+      font-weight: bold;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <p id="esipuhe">tämä on esipuhe, jonka tyylimäärittely ei tapahdu head lohkossa</p>
+  <p>tässä tekstissä kaikki kirjaimet on isoja vaikka ne on kirjotettu pienellä</p>
+  <p>html ja <span class="highlight">CSS</span> on hauskaa</p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+.cursor-change ol {
+  border: 1px solid black;
+}
+
+.cursor-change li {
+  color: blue;
+}
+
+.cursor-change ol li::marker {
+  color: black;
+}
+
+.cursor-change ol:hover {
+  cursor: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_transparent_picture.png/32px-HD_transparent_picture.png'), auto;
+}
+
+h1 {
+  white-space: nowrap;
+}
+
+.marker-image ol {
+  list-style-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0e/Savonia_amk_logo.svg');
+}

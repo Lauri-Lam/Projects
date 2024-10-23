@@ -1,0 +1,38 @@
+.nav {
+  background-color: lightskyblue;
+  font-size: 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid;
+}
+
+.nav a {
+  padding: 0 2rem;
+}
+
+.tokarivi,
+.ekarivi {
+  display: flex;
+}
+
+section {
+  width: 50%;
+  border: 1px solid;
+}
+
+#section-eka, #section-toka, #section-kolme, #section-nelja {
+  padding: 1.5rem;
+  margin: 1px;
+}
+
+#section-eka,
+#section-kolme {
+  background-color: orange;
+  margin-left: 1rem;
+}
+
+#section-toka,
+#section-nelja {
+  background-color: lightcoral;
+  margin-right: 1rem;
+}

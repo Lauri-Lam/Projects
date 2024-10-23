@@ -1,0 +1,30 @@
+.wrapper {
+  height: 100vh;
+}
+
+.wrapper #header,
+.wrapper #content,
+.flexbox #about-us,
+.flexbox #ad,
+.wrapper #footer {
+  background-color: orange;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.wrapper #header {
+  text-align: center;
+  margin: 1rem 1rem 2rem 1rem;
+}
+
+.flexbox {
+  display: flex;
+}
+
+.flexbox #about-us {
+  width: 65%;
+}
+
+.flexbox #ad {
+  flex: 1;
+}

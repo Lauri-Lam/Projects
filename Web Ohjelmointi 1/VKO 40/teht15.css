@@ -1,0 +1,52 @@
+.nav {
+  background-color: lightskyblue;
+  font-size: 2rem;
+  padding: 1rem;
+  border: 1px solid;
+  margin: 0 1rem;
+}
+
+.nav a {
+  padding: 0 2rem;
+}
+
+.ekarivi, .tokarivi {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1rem;
+}
+
+#section-eka, #section-toka, #section-kolme, #section-nelja {
+  padding: 1.5rem;
+  border: 1px solid;
+}
+
+#section-eka,
+#section-kolme {
+  background-color: orange;
+}
+
+#section-toka,
+#section-nelja {
+  background-color: lightcoral;
+}
+
+.ohjelmointikielet-content, 
+.ohjelmointiymparistot-content,
+.apuvalineet-content,
+.hyodyt-content {
+  background-color: whitesmoke;
+}
+
+.python-kieli,
+.c-kieli,
+.python-ide,
+.c-ide,
+.w3school,
+.chatgpt,
+.fullstack,
+.kyberturvallisuus {
+  border: 2px solid lightgrey;
+  padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Matka</title>
+
+    <!-- Lomakekenttien laitto vasemmalta tasan -->
+    <style>
+        label {
+            display: block;
+            width: 8em;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h3>Matka</h3>
+
+    <form>
+        <p>
+            <label>Tankattu määrä:</label>
+            <input type="text" id="maara" size="5"> l
+        </p>
+
+        <p>
+            <label>Keskikulutus:</label>
+            <input type="text" id="kulutus" size="5"> l/100km
+        </p>
+
+        <input type="button" value="Kerro" onclick="laske()">
+    </form>
+
+    <!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+    <div id="vastaus"></div>
+
+    <script>
+        // Funktio, jota painike kutsuu
+        function laske() {
+
+            // Lomakekentän arvon lukeminen
+            let maara = Number(document.getElementById("maara").value);
+            let kulutus = Number(document.getElementById("kulutus").value);
+            // Käsittely
+
+            // Vastauksen kirjoittaminen html-sivulle
+            document.getElementById("vastaus").innerHTML = "Tankatulla määrällä voidaan ajaa " + (maara / kulutus).toFixed(2) + " kilometriä";
+        }
+    </script>
+</body>
+</html>

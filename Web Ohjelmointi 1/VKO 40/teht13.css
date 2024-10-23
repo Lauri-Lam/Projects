@@ -1,0 +1,35 @@
+.container {
+  border: 1px solid black;
+  padding: 2rem;
+  background-color: lightskyblue;
+  color: whitesmoke;
+  font-size: 2rem;
+}
+
+.submit {
+  color: whitesmoke;
+  background-color: lightcoral;
+}
+
+.submit,
+.name {
+  font-size: 1.5rem;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+}
+
+.name-label {
+  margin-right: 0.5rem;
+}
+
+.submit {
+  margin-left: auto;
+  padding: 10px;
+}
+
+.name {
+  padding: 10px 10px 10px 5px;
+}
