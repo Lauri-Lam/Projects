@@ -1,51 +1,36 @@
 <!DOCTYPE html>
-
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>Matka</title>
-
-    <!-- Lomakekenttien laitto vasemmalta tasan -->
-    <style>
-        label {
-            display: block;
-            width: 8em;
-            float: left;
-        }
-    </style>
+    <title>Lottonumerot</title>
+    <!-- 
+    Ohjelma arpoo seitsemän lottonumeroa ja yhden lisänumeron. 
+    Ohjelma ei tarkasta, onko sama luku jo arvottu aiemmin.
+    -->
 </head>
+
 <body>
-    <h3>Matka</h3>
+    <h3>Lottonumerot</h3>
 
-    <form>
-        <p>
-            <label>Tankattu määrä:</label>
-            <input type="text" id="maara" size="5"> l
-        </p>
-
-        <p>
-            <label>Keskikulutus:</label>
-            <input type="text" id="kulutus" size="5"> l/100km
-        </p>
-
-        <input type="button" value="Kerro" onclick="laske()">
-    </form>
-
-    <!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
     <div id="vastaus"></div>
 
     <script>
-        // Funktio, jota painike kutsuu
-        function laske() {
+        function arvo() {
+            let count = 7;
+            let varsinaiset = '';
 
-            // Lomakekentän arvon lukeminen
-            let maara = Number(document.getElementById("maara").value);
-            let kulutus = Number(document.getElementById("kulutus").value);
-            // Käsittely
+            for (let i = 1; i <= count; i++){
+                let numero = Math.round(Math.random() * 39 + 1);
+                varsinaiset += `${numero} `
+            }
 
-            // Vastauksen kirjoittaminen html-sivulle
-            document.getElementById("vastaus").innerHTML = "Tankatulla määrällä voidaan ajaa " + (maara / kulutus).toFixed(2) + " kilometriä";
+            document.getElementById("vastaus").innerHTML = `Varsinaiset numerot ovat ${varsinaiset} <br> ja lisänumero ${Math.round(Math.random() * 39 + 1)}`
         }
+
+        // Funktiota ei suoriteta, jos sitä ei kutsuta.
+        arvo();
     </script>
 </body>
+
 </html>
