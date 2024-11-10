@@ -25,7 +25,6 @@ class Oppilas {
       this.arvosanat = [];
   }
 
-  // Getterit
   get nimi() {
       return this._nimi;
   }
@@ -42,7 +41,6 @@ class Oppilas {
       return this._puhelinnumero;
   }
 
-  // Setterit
   set nimi(nimi) {
       this._nimi = nimi;
   }
@@ -63,7 +61,6 @@ class Oppilas {
       this._puhelinnumero = puhelinnumero;
   }
 
-  // Metodi tietojen tulostukseen
   tulosta() {
       console.log(`Nimi: ${this.nimi}`);
       console.log(`Syntymävuosi: ${this.syntymävuosi.getFullYear()}`);
@@ -71,13 +68,11 @@ class Oppilas {
       console.log(`Puhelinnumero: ${this.puhelinnumero}`);
   }
 
-  // Metodi iän laskemiseen
   laskeIka() {
       const nykyinenVuosi = new Date().getFullYear();
       return nykyinenVuosi - this.syntymävuosi.getFullYear();
   }
 
-  // Metodi arvosanan lisäämiseen
   lisaaArvosana(oppiaine, arvosana, suorituspvm) {
       try {
           const uusiArvosana = new Arvosana(oppiaine, arvosana, suorituspvm);
@@ -87,7 +82,6 @@ class Oppilas {
       }
   }
 
-  // Metodi kaikkien arvosanojen tulostamiseen
   printArvosana() {
       console.log(`Oppilaan ${this.nimi} arvosanat:`);
       this.arvosanat.forEach((arvosanaObj, index) => {
@@ -99,7 +93,6 @@ class Oppilas {
       });
   }
 
-  // Getteri arvosanoille muutetulla asteikolla 0-5
   get arvosanatMuutetullaAsteikolla() {
       return this.arvosanat.map(arvosanaObj => {
           let muutettuArvosana;
@@ -123,27 +116,22 @@ class Oppilas {
   }
 }
 
-// Luodaan instanssi Oppilas-luokasta ja annetaan arvot jäsenmuuttujille
 const oppilas = new Oppilas(
   "Matti Meikäläinen",
-  new Date(2000, 0, 1), // Tammikuun 1. päivä vuonna 2000
+  new Date(2000, 0, 1),
   "Esimerkkikatu 123",
   "0401234567"
 );
 
-// Lisätään arvosanoja
 oppilas.lisaaArvosana("Matematiikka", 9, new Date(2023, 5, 10));
 oppilas.lisaaArvosana("Englanti", 7, new Date(2023, 6, 15));
 oppilas.lisaaArvosana("Fysiikka", 5, new Date(2023, 7, 20));
 
-// Tulostetaan oppilaan tiedot ja iän
 oppilas.tulosta();
 console.log(`Ikä: ${oppilas.laskeIka()} vuotta`);
 
-// Tulostetaan oppilaan kaikki arvosanat alkuperäisellä asteikolla
 oppilas.printArvosana();
 
-// Tulostetaan arvosanat muutetulla asteikolla 0-5
 console.log("Arvosanat muutetulla asteikolla 0-5:");
 oppilas.arvosanatMuutetullaAsteikolla.forEach(arvosanaObj => {
   console.log(

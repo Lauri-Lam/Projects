@@ -101,7 +101,6 @@ const oppilas = new Oppilas(
   "0401234567"
 );
 
-// Lisätään arvosanoja
 oppilas.lisaaArvosana("Matematiikka", 9, new Date(2023, 5, 10));
 oppilas.lisaaArvosana("Englanti", 7, new Date(2023, 6, 15));
 oppilas.lisaaArvosana("Fysiikka", 5, new Date(2023, 7, 20));
