@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekisteröityminen</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        #error-message {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="register-btn">Rekisteröidy</button>
+    <div id="dialog" title="Rekisteröityminen" style="display:none;">
+        <form id="register-form">
+            <label for="name">Nimi:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="username">Tunnus:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <div id="error-message">Tiedot ovat virheelliset!</div>
+        </form>
+    </div>
+    <div id="content" style="display:none;">
+        <p id="user-info"></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            let isRegistered = false;
+
+            $("#register-btn").on("click", function () {
+                $("#dialog").dialog({
+                    modal: true,
+                    buttons: {
+                        "Save": function () {
+                            const name = $("#name").val();
+                            const username = $("#username").val();
+
+                            if (name.length >= 5 && username.length >= 5) {
+                                isRegistered = true;
+                                $("#user-info").text(`Käyttäjä: ${name}, Tunnus: ${username}`);
+                                $("#content").show();
+                                $(this).dialog("close");
+                            } else {
+                                $("#error-message").show();
+                            }
+                        },
+                        "Peruuta": function () {
+                            $(this).dialog("close");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

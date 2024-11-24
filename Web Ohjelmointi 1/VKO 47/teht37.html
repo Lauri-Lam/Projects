@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syntymäpäivä Datepicker</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        #selected-date {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Valitse syntymäpäivä</h1>
+    <input type="text" id="datepicker" placeholder="Valitse päivä">
+    <p id="selected-date">Pvm:ää ei ole valittu</p>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                dateFormat: "dd.mm.yy",
+                minDate: new Date(1996, 0, 1),
+                maxDate: new Date(2024, 11, 31),
+                onSelect: function (dateText) {
+                    $("#selected-date").text(`Valittu pvm: ${dateText}`);
+                }
+            });
+            $.datepicker.setDefaults($.datepicker.regional["fi"]);
+        });
+    </script>
+</body>
+</html>

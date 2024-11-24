@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekisteröityminen</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        #error-message {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="register-btn">Rekisteröidy</button>
+    <div id="dialog" title="Rekisteröityminen" style="display:none;">
+        <form id="register-form">
+            <label for="name">Nimi:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="username">Tunnus:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label>
+                <input type="checkbox" id="extra-info"> Lisätietoja
+            </label><br><br>
+            <label for="school">Oppilaitos:</label>
+            <input type="text" id="school" disabled><br><br>
+            <label for="age">Ikä:</label>
+            <input type="number" id="age" disabled><br><br>
+            <div id="error-message">Tiedot ovat virheelliset!</div>
+        </form>
+    </div>
+    <div id="content" style="display:none;">
+        <p id="user-info"></p>
+        <p id="additional-info"></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            let isRegistered = false;
+
+            $("#register-btn").on("click", function () {
+                $("#dialog").dialog({
+                    modal: true,
+                    buttons: {
+                        "Save": function () {
+                            const name = $("#name").val();
+                            const username = $("#username").val();
+                            const extraInfoEnabled = $("#extra-info").is(":checked");
+                            const school = $("#school").val();
+                            const age = $("#age").val();
+
+                            if (name.length >= 5 && username.length >= 5) {
+                                isRegistered = true;
+                                let userInfo = `Käyttäjä: ${name}, Tunnus: ${username}`;
+                                let additionalInfo = "";
+
+                                if (extraInfoEnabled) {
+                                    additionalInfo = `Oppilaitos: ${school || "Ei annettu"}, Ikä: ${age || "Ei annettu"}`;
+                                }
+
+                                $("#user-info").text(userInfo);
+                                $("#additional-info").text(additionalInfo);
+                                $("#content").show();
+                                $(this).dialog("close");
+                            } else {
+                                $("#error-message").show();
+                            }
+                        },
+                        "Peruuta": function () {
+                            $(this).dialog("close");
+                        }
+                    },
+                    open: function () {
+                        if (isRegistered) {
+                            $("#name, #username, #school, #age").val("");
+                            $("#extra-info").prop("checked", false);
+                            $("#school, #age").prop("disabled", true);
+                        }
+                        $("#error-message").hide();
+                    }
+                });
+            });
+
+            $("#extra-info").on("change", function () {
+                const isChecked = $(this).is(":checked");
+                $("#school, #age").prop("disabled", !isChecked);
+            });
+        });
+    </script>
+</body>
+</html>
