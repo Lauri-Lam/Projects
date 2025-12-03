@@ -1,1 +1,0 @@
-const laske = document.getElementById("laske").onclick = function() { let hinta = Number(document.getElementById("text").value); let ero = hinta * 0.24 - hinta * 0.1; document.getElementById("result").innerHTML = `Erotus on ${ero.toFixed(2)} euroa` }
